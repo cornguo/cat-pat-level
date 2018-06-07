@@ -91,10 +91,20 @@
     var svgString = new XMLSerializer().serializeToString(document.querySelector('#map'));
     var canvas = document.createElement('canvas');
     var ctx = canvas.getContext("2d");
+
     canvas.width = 1280;
     canvas.height = 1024;
     canvg(canvas, svgString);
-    canvas.toBlob(function (blob) { saveAs(blob, 'cat.png'); });
+
+    var ua = navigator.userAgent.toLowerCase();
+
+    // if is facebook in-app browser
+    if (ua.indexOf("fbav") > -1) {
+      var dataUri = canvas.toDataURL("image/png");
+      document.write('<image src="' + dataUri + '" />');
+    } else {
+      canvas.toBlob(function (blob) { saveAs(blob, 'cat.png'); });
+    }
   });
 
   function bindContextMenu (e) {
