@@ -25,7 +25,8 @@
     {id:"butt",lv:0,},
     {id:"legs",lv:0,},
     {id:"tail",lv:0,},
-    {id:"paws",lv:0,}
+    {id:"front-paws",lv:0,},
+    {id:"rear-paws",lv:0,}
   ];
 
   var contextMenu = document.querySelector("#contextMenu");
