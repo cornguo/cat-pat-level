@@ -199,3 +199,30 @@ a#ref {
   height: 20px;
   fill: #fff;
 }
+
+#view-area {
+  height: 100vh;
+}
+
+#image-area {
+  display: none;
+  text-align: center;
+}
+
+#image-area > h1 {
+  padding-top: 2em;
+  font-size: 150%;
+}
+
+#image-area > a > img{
+  border: 2px solid #666;
+  width: 80%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  padding: 0;
+}

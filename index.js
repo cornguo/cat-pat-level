@@ -115,17 +115,28 @@
     canvas.height = 720;
     canvg(canvas, svgString);
 
-    var ua = navigator.userAgent.toLowerCase();
-
-    // if is facebook in-app browser
-    if (ua.indexOf("fbav") > -1 || ua.indexOf("safari") > -1) {
-      var dataUri = canvas.toDataURL("image/png");
-      document.write('<image src="' + dataUri + '" />');
-      return;
-    }
-
-    canvas.toBlob(function (blob) { saveAs(blob, 'cat.png'); });
+    var dataUri = canvas.toDataURL("image/png");
+    var imageArea = document.querySelector('#image-area');
+    switchImageArea();
+    imageArea.innerHTML = '<h1>點圖儲存</h1>';
+    imageArea.innerHTML += '<a href="' + dataUri + '" download="cat.png"><img src="' + dataUri + '"></img></a>';
   });
+
+  function switchImageArea() {
+    var saveAs = document.querySelector('#saveAs');
+    var viewArea = document.querySelector('#view-area');
+    var imageArea = document.querySelector('#image-area');
+
+    if ('none' === viewArea.style.display) {
+      saveAs.innerText = '產生圖片';
+      viewArea.style.display = 'block';
+      imageArea.style.display = 'none';
+    } else {
+      saveAs.innerText = '返回編輯';
+      viewArea.style.display = 'none';
+      imageArea.style.display = 'block';
+    }
+  }
 
   function bindContextMenu (e) {
     // 180: context menu width, 20: buffer
