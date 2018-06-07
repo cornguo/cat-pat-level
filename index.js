@@ -29,6 +29,24 @@
     {id:"rear-paws",lv:0,}
   ];
 
+  var translate = {
+    "ears": "耳朵",
+    "face": "臉",
+    "nose": "鼻子",
+    "chin": "下巴",
+    "neck": "脖子",
+    "chest": "胸",
+    "hands": "手手",
+    "back": "背",
+    "side": "側腹",
+    "stomach": "肚肚",
+    "butt": "屁屁",
+    "legs": "腳腳",
+    "tail": "尾巴",
+    "front-paws": "前肉球",
+    "rear-paws": "後肉球"
+  };
+
   var contextMenu = document.querySelector("#contextMenu");
   var menuTitle = document.querySelector('#menuTitle');
   var currentId = '';
@@ -119,7 +137,7 @@
     contextMenu.style.left= x + 'px';
     contextMenu.style.display = 'block';
     currentId = (e.target.id || e.target.textContent).replace(/\d*/g, '');
-    menuTitle.textContent = currentId;
+    menuTitle.textContent = translate[currentId];
   }
 
   function calcTotal () {
