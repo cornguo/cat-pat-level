@@ -121,9 +121,10 @@
     if (ua.indexOf("fbav") > -1) {
       var dataUri = canvas.toDataURL("image/png");
       document.write('<image src="' + dataUri + '" />');
-    } else {
-      canvas.toBlob(function (blob) { saveAs(blob, 'cat.png'); });
+      return;
     }
+
+    canvas.toBlob(function (blob) { saveAs(blob, 'cat.png'); });
   });
 
   function bindContextMenu (e) {
