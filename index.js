@@ -11,7 +11,7 @@
     '-1': "#CCC"
   };
 
-  var cities=[
+  var cities = [
     {id:"ears",lv:0,},
     {id:"face",lv:0,},
     {id:"nose",lv:0,},
