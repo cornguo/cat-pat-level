@@ -93,7 +93,7 @@
     var ctx = canvas.getContext("2d");
 
     canvas.width = 1280;
-    canvas.height = 1024;
+    canvas.height = 720;
     canvg(canvas, svgString);
 
     var ua = navigator.userAgent.toLowerCase();
