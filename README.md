@@ -1,7 +1,7 @@
 Cat Pat Level
 ===
 
-A cat-lover's fork.
+A cat-lover's fork of [Taiwan Travel Level](https://github.com/tpai/taiwan-travel-level).
 
 [![](https://i.imgur.com/ZRFDgmF.png)](http://cdn.cornguo.net/cat-pat-level)
 
