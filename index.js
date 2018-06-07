@@ -118,7 +118,7 @@
     var ua = navigator.userAgent.toLowerCase();
 
     // if is facebook in-app browser
-    if (ua.indexOf("fbav") > -1) {
+    if (ua.indexOf("fbav") > -1 || ua.indexOf("safari") > -1) {
       var dataUri = canvas.toDataURL("image/png");
       document.write('<image src="' + dataUri + '" />');
       return;
