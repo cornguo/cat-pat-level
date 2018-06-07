@@ -2,15 +2,31 @@
   // object assign polyfill
   polyfill();
 
-  var colorMap = [
-    "#fff",
-    "#27BBEE",
-    "#88B14B",
-    "#F5A623",
-    "#FF7A7A"
-  ];
+  var colorMap = {
+    0: "#FFF",
+    1: "#27BBEE",
+    2: "#88B14B",
+    3: "#F5A623",
+    4: "#FF7A7A",
+    '-1': "#CCC"
+  };
 
-  var cities=[{id:"新北",lv:0,},{id:"台北",lv:0,},{id:"基隆",lv:0,},{id:"桃園",lv:0,},{id:"新竹",lv:0,},{id:"苗栗",lv:0,},{id:"台中",lv:0,},{id:"彰化",lv:0,},{id:"雲林",lv:0,},{id:"嘉義",lv:0,},{id:"南投",lv:0,},{id:"台南",lv:0,},{id:"高雄",lv:0,},{id:"屏東",lv:0,},{id:"台東",lv:0,},{id:"花蓮",lv:0,},{id:"宜蘭",lv:0,},{id:"馬祖",lv:0,},{id:"金門",lv:0,},{id:"澎湖",lv:0,}];
+  var cities=[
+    {id:"ears",lv:0,},
+    {id:"face",lv:0,},
+    {id:"nose",lv:0,},
+    {id:"chin",lv:0,},
+    {id:"neck",lv:0,},
+    {id:"chest",lv:0,},
+    {id:"hands",lv:0,},
+    {id:"back",lv:0,},
+    {id:"side",lv:0,},
+    {id:"stomach",lv:0,},
+    {id:"butt",lv:0,},
+    {id:"legs",lv:0,},
+    {id:"tail",lv:0,},
+    {id:"paws",lv:0,}
+  ];
 
   var contextMenu = document.querySelector("#contextMenu");
   var menuTitle = document.querySelector('#menuTitle');
@@ -63,13 +79,15 @@
 
   // save as png
   document.querySelector('#saveAs').addEventListener('click', function () {
+    alert('存檔怪怪的，還沒修好 Orz');
+    return;
     var svgString = new XMLSerializer().serializeToString(document.querySelector('#map'));
     var canvas = document.createElement('canvas');
     var ctx = canvas.getContext("2d");
-    canvas.width = 750;
-    canvas.height = 1124;
+    canvas.width = 1280;
+    canvas.height = 1024;
     canvg(canvas, svgString);
-    canvas.toBlob(function (blob) { saveAs(blob, 'taiwan.png'); });
+//    canvas.toBlob(function (blob) { saveAs(blob, 'cat.png'); });
   });
 
   function bindContextMenu (e) {
