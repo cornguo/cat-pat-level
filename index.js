@@ -79,15 +79,13 @@
 
   // save as png
   document.querySelector('#saveAs').addEventListener('click', function () {
-    alert('存檔怪怪的，還沒修好 Orz');
-    return;
     var svgString = new XMLSerializer().serializeToString(document.querySelector('#map'));
     var canvas = document.createElement('canvas');
     var ctx = canvas.getContext("2d");
     canvas.width = 1280;
     canvas.height = 1024;
     canvg(canvas, svgString);
-//    canvas.toBlob(function (blob) { saveAs(blob, 'cat.png'); });
+    canvas.toBlob(function (blob) { saveAs(blob, 'cat.png'); });
   });
 
   function bindContextMenu (e) {
