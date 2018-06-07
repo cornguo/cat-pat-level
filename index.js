@@ -77,6 +77,15 @@
     });
   });
 
+  // set name
+  var catName = document.querySelector('#cat-name');
+  catName.addEventListener('click', function (e) {
+    var name = prompt('Name?');
+    if (name) {
+      document.querySelector('#cat-name > tspan').textContent = name;
+    }
+  });
+
   // save as png
   document.querySelector('#saveAs').addEventListener('click', function () {
     var svgString = new XMLSerializer().serializeToString(document.querySelector('#map'));
