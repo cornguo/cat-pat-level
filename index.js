@@ -139,6 +139,9 @@
       saveAs.innerText = '返回編輯';
       viewArea.style.display = 'none';
       imageArea.style.display = 'block';
+      cities.map(function (city) {
+        gtag('event', 'cat-level', {'body-part': city.id, 'body-part-level': city.lv});
+      });
     }
   }
 

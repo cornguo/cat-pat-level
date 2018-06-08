@@ -21,7 +21,12 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'UA-409889-8');
+      gtag('config', 'UA-409889-8', {
+        'custom_map': {
+          'dimension1': 'body-part',
+          'metric1': 'body-part-level'
+        }
+      });
     </script>
   </head>
   <body>
