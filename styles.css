@@ -211,19 +211,30 @@ a#ref {
 }
 
 #image-area > h1 {
-  padding-top: 2em;
+  padding-top: 1em;
   font-size: 150%;
 }
 
 #image-area > a > img{
   border: 2px solid #666;
-  width: 90%;
+  width: auto;
+  max-width: 90%;
   text-align: center;
   position: absolute;
-  top: 50%;
-  left: 5%;
+  top: 4em;
+  left: 0;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
   padding: 0;
+  max-height: 70vh;
+  margin: 0 50%;
+}
+
+svg#map {
+  max-height: 100vh;
+  margin-top: -10px;
 }
