@@ -102,6 +102,10 @@
     var name = prompt('Name?');
     if (name) {
       document.querySelector('#cat-name > tspan').textContent = name;
+      gtag('event', 'set-name', {
+        'event_category': 'cat',
+        'event_label': name
+      });
     }
   });
 
